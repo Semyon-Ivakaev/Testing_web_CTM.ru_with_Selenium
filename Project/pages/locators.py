@@ -28,6 +28,7 @@ class BasePageLocators():
     CHECK = (By.CSS_SELECTOR, "#main-menu .active")
     RAIL_SUBMENU = (By.CSS_SELECTOR, ".button.tiny i")
     LINK_CHECK = (By.CSS_SELECTOR, "link[rel='canonical']")
+    BUTTON_NEXT = (By.CSS_SELECTOR, ".arrow a")
 
 class AwardsPageLocators():
     AWARDS_TITLE = (By.CSS_SELECTOR, "#page-title")

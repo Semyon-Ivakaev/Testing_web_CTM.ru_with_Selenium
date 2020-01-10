@@ -6,6 +6,9 @@ from .pages.awards_page import AwardsPage
 from .pages.smi_page import SMIPage
 from .pages.training_page import TraininigPage
 from .pages.documents_page import DocumentsPage
+from .pages.news_page import NewsPage
+from .pages.company_page import CompanyPage
+
 
 class TestUser:
     @pytest.fixture(scope="function", autouse=True)
@@ -132,9 +135,22 @@ class TestUser:
         page.open()
         page.guest_look_pages_training()
 
-    #@pytest.mark.skip
+    @pytest.mark.skip
     def test_guest_look_link_on_documents(self, browser):
         link = 'https://www.ctm.ru/documents'
         page = DocumentsPage(browser, link)
         page.open()
         page.guest_look_link_on_documents()
+
+    @pytest.mark.skip
+    def test_guest_look_news_on_news_page(self, browser):
+        link = 'https://www.ctm.ru/%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8'
+        page = NewsPage(browser, link)
+        page.open()
+        page.guest_look_news_on_news_page()
+
+    def test_guest_look_news_on_company_page(self, browser):
+        link = 'https://www.ctm.ru/%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8/%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F'
+        page = CompanyPage(browser, link)
+        page.open()
+        page.guest_look_news_on_company_page()
